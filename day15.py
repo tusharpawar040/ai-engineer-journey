@@ -19,5 +19,5 @@ def home():
 
 @app.post("/predict")
 def predict(data: TextIn):
-    result = clf(data.test)[0]
+    result = clf(data.text)[0]
     return {"label": result["label"],"score": round(result["score"],4)}
